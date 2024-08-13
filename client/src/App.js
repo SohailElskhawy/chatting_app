@@ -1,10 +1,13 @@
 import './App.css';
-
+import Login from './containers/Login/Login';
+import ChatPage from './containers/ChatPage/ChatPage';
+import { useState } from 'react';
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div className="App">
-      <h1>React App</h1>
-    </div>
+    <>
+      {isLoggedIn ? <ChatPage /> : <Login setIsLoggedIn={setIsLoggedIn} />}
+    </>
   );
 }
 
